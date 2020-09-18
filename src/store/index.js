@@ -7,24 +7,29 @@ export default new Vuex.Store({
   state: {
     products: [
       {
-        name: 'Tiny tea pot', 
+        name: 'Tea pot', 
         price: 50
       },
       {
-        name: 'Tiny machine', 
+        name: 'Bowl', 
         price: 90
       },
       {
-        name: 'Tiny gun', 
+        name: 'Plate', 
         price: 100
       },
       {
-        name: 'Tiny book', 
-        price: 60
+        name: 'Book', 
+        price: 200
       },
     ]
   },
   mutations: {
+    reducePrice: state => {
+      state.products.forEach( product => {
+        product.price -= 1
+      })
+    }
   },
   actions: {
   },

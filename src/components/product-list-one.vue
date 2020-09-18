@@ -6,6 +6,7 @@
         <h3>Name: {{ product.name }}</h3>
         <h4>Price: {{ product.price }} :-</h4>
       </li>
+      <button @click="reducePrice">Reduce Price</button>
     </ul>
   </div>
 </template>
@@ -16,6 +17,11 @@ export default {
   computed: {
     products() {
       return this.$store.state.products
+    }
+  },
+  methods: {
+    reducePrice() {
+      this.$store.commit('reducePrice')
     }
   }
 }
